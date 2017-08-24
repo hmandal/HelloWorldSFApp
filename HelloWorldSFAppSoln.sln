@@ -7,6 +7,8 @@ Project("{A07B5EB6-E848-4116-A8D0-A826331D98C6}") = "HelloWorldSFApp", "HelloWor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldStatelessService", "HelloWorldStatelessService\HelloWorldStatelessService.csproj", "{FF156653-BC5E-4EA7-8E30-183E63C2363E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HelloWorldStatefulService", "HelloWorldStatefulService\HelloWorldStatefulService.csproj", "{D83E8576-C4B4-4FAD-9EC1-5BAC16238AB9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -23,6 +25,10 @@ Global
 		{FF156653-BC5E-4EA7-8E30-183E63C2363E}.Debug|x64.Build.0 = Debug|x64
 		{FF156653-BC5E-4EA7-8E30-183E63C2363E}.Release|x64.ActiveCfg = Release|x64
 		{FF156653-BC5E-4EA7-8E30-183E63C2363E}.Release|x64.Build.0 = Release|x64
+		{D83E8576-C4B4-4FAD-9EC1-5BAC16238AB9}.Debug|x64.ActiveCfg = Debug|x64
+		{D83E8576-C4B4-4FAD-9EC1-5BAC16238AB9}.Debug|x64.Build.0 = Debug|x64
+		{D83E8576-C4B4-4FAD-9EC1-5BAC16238AB9}.Release|x64.ActiveCfg = Release|x64
+		{D83E8576-C4B4-4FAD-9EC1-5BAC16238AB9}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

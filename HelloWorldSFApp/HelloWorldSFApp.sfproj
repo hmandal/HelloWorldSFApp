@@ -30,6 +30,7 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\HelloWorldStatefulService\HelloWorldStatefulService.csproj" />
     <ProjectReference Include="..\HelloWorldStatelessService\HelloWorldStatelessService.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
