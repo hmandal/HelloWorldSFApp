@@ -32,6 +32,7 @@
   <ItemGroup>
     <ProjectReference Include="..\HelloWorldStatefulService\HelloWorldStatefulService.csproj" />
     <ProjectReference Include="..\HelloWorldStatelessService\HelloWorldStatelessService.csproj" />
+    <ProjectReference Include="..\SFActorService\SFActorService.csproj" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" />
   <PropertyGroup>
