@@ -68,4 +68,39 @@ namespace SFActorService
             return this.StateManager.AddOrUpdateStateAsync("count", count, (key, value) => count > value ? count : value, cancellationToken);
         }
     }
+
+    public class HelloWorldActorService : Actor, IHelloWorldActorService
+    {
+        public HelloWorldActorService(ActorService actorService, ActorId actorId) : base(actorService, actorId)
+        {
+        }
+
+        /// <summary>
+        /// This method is called whenever an actor is activated.
+        /// An actor is activated the first time any of its methods are invoked.
+        /// </summary>
+        protected override Task OnActivateAsync()
+        {
+            ActorEventSource.Current.ActorMessage(this, "HelloWorldActor activated.");
+
+            // The StateManager is this actor's private state store.
+            // Data stored in the StateManager will be replicated for high-availability for actors that use volatile or persisted state storage.
+            // Any serializable object can be saved in the StateManager.
+            // For more information, see https://aka.ms/servicefabricactorsstateserialization
+
+            return this.StateManager.TryAddStateAsync("message", "Default Message");
+        }
+
+        Task<string> IHelloWorldActorService.GetMessageAsync(CancellationToken cancellationToken)
+        {
+            return this.StateManager.GetStateAsync<string>("message", cancellationToken);
+        }
+
+        Task IHelloWorldActorService.SetMessageAsync(string message, CancellationToken cancellationToken)
+        {
+            // Requests are not guaranteed to be processed in order nor at most once.
+            // The update function here verifies that the incoming count is greater than the current count to preserve order.
+            return this.StateManager.AddOrUpdateStateAsync("message", message, (key, value) => value != "Default Message" ? message : $"{value} (out of order)", cancellationToken);
+        }
+    }
 }

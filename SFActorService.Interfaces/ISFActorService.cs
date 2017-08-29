@@ -26,4 +26,20 @@ namespace SFActorService.Interfaces
         /// <returns></returns>
         Task SetCountAsync(int count, CancellationToken cancellationToken);
     }
+
+    public interface IHelloWorldActorService : IActor
+    {
+        /// <summary>
+        /// TODO: Replace with your own actor method.
+        /// </summary>
+        /// <returns></returns>
+        Task<string> GetMessageAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// TODO: Replace with your own actor method.
+        /// </summary>
+        /// <param name="count"></param>
+        /// <returns></returns>
+        Task SetMessageAsync(string count, CancellationToken cancellationToken);
+    }
 }

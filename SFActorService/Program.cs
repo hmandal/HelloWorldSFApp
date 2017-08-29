@@ -23,6 +23,8 @@ namespace SFActorService
 
                 ActorRuntime.RegisterActorAsync<SFActorService>(
                    (context, actorType) => new ActorService(context, actorType)).GetAwaiter().GetResult();
+                ActorRuntime.RegisterActorAsync<HelloWorldActorService>(
+                   (context, actorType) => new ActorService(context, actorType)).GetAwaiter().GetResult();
 
                 Thread.Sleep(Timeout.Infinite);
             }
